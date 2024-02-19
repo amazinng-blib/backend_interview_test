@@ -70,3 +70,13 @@ The data structure used to hold product records is an array named `products`, wh
 3. Run the server using `yarn run dev`.
 4. Test the endpoint by running `yarn test`
 5. Access or test the API endpoints using an HTTP client such as Postman or thunder Client.
+
+| Entity   | Attribute                                                                                                    |
+| -------- | ------------------------------------------------------------------------------------------------------------ |
+| Merchant | - merchantId(string)                                                                                         |
+| Product  | - id(string)<br> - merchantId(string) <br> - name(string) <br> -description(string) <br> -price(number) <br> |
+
+## Relationships
+
+- Each merchant can have multiple products
+- Each Product belongs to one merchant
