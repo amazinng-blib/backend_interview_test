@@ -8,7 +8,7 @@ const app = express();
 const cors = require('cors');
 
 const developmentOrigin = 'http://localhost:3000';
-const productionOrigin = ['https://www.'];
+const productionOrigin = ['https://backend-interview-test.vercel.app'];
 
 app.use(
   cors({

@@ -4,7 +4,7 @@ This API allows merchants to manage their product listings.
 
 ## Endpoints
 
-## BaseUrl = ['http://localhost:5080/api/v1/product']
+## BaseUrl = ['https://backend-interview-test.vercel.app/api/v1/product']
 
 ### Display Products by Merchant ID
 
