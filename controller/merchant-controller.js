@@ -95,9 +95,7 @@ const deleteProduct = expressAsyncHandler(async (req, res) => {
     const filterProduct = products?.filter(
       (product) => product.id !== productId
     );
-    return res
-      .status(200)
-      .json({ message: 'Product deleted Successfully', filterProduct });
+    return res.status(200).json({ message: 'Product deleted Successfully' });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
