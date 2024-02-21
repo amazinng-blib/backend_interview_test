@@ -19,6 +19,42 @@ app.use(
   })
 );
 app.use(express.json());
+// todo: swagger
+
+('use strict');
+
+var path = require('path');
+var http = require('http');
+var controllers = require('./controller/merchant-controller.js');
+
+var oas3Tools = require('oas3-tools');
+var serverPort = 8080;
+
+// swaggerRouter configuration
+var options = {
+  routing: {
+    controllers: controllers,
+  },
+};
+
+var expressAppConfig = oas3Tools.expressAppConfig(
+  path.join(__dirname, '/docs/api/openapi.yaml'),
+  options
+);
+var swaggerApp = expressAppConfig.getApp();
+
+// Initialize the Swagger middleware
+http.createServer(swaggerApp).listen(serverPort, function () {
+  console.log(
+    'Your server is listening on port %d (http://localhost:%d)',
+    serverPort,
+    serverPort
+  );
+  console.log(
+    'Swagger-ui is available on http://localhost:%d/docs',
+    serverPort
+  );
+});
 
 // todo: routes
 const productRoutes = require('./routes/product-routes');
