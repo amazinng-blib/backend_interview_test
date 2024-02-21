@@ -20,6 +20,46 @@ app.use(
 );
 app.use(express.json());
 
+// todo: swagger
+const path = require('path');
+const http = require('http');
+const controllers = require('../first_interview_test/controller/merchant-controller');
+const oas3Tools = require('oas3-tools');
+
+const serverPort = 8080;
+
+// SwaggerRouter configuration
+const options = {
+  routing: {
+    controllers: controllers,
+  },
+};
+
+// Express app configuration
+const expressAppConfig = oas3Tools.expressAppConfig(
+  path.join(__dirname, 'docs/api/openapi.yaml'),
+  options
+);
+
+// Initialize the Swagger middleware
+const swaggerApp = expressAppConfig.getApp();
+
+// Use the Swagger middleware in your Express app
+app.use(swaggerApp);
+
+// Start the server
+http.createServer(app).listen(serverPort, function () {
+  console.log(
+    'Your server is listening on port %d (http://localhost:%d)',
+    serverPort,
+    serverPort
+  );
+  console.log(
+    'Swagger-ui is available on http://localhost:%d/docs',
+    serverPort
+  );
+});
+
 // todo: routes
 const productRoutes = require('./routes/product-routes');
 app.use('/api/v1/product', productRoutes);
