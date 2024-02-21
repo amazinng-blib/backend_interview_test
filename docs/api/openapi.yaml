@@ -244,4 +244,4 @@ components:
           schema:
             type: array
             items:
-              $ref: '#/components/schemas/Merchant'
+              $ref: '#/components/schemas/ProductModel'
