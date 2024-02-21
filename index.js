@@ -26,20 +26,14 @@ const swaggerUi = require('swagger-ui-express');
 const swaggerOptions = require('./swagger/swagger-options');
 const path = require('path');
 
+// Serve Swagger UI at /api-docs endpoint
+
 const swaggerSpec = swaggerJsdoc(swaggerOptions);
 app.use(
   express.static(path.join(__dirname, 'node_modules', 'swagger-ui-dist'))
 );
 
-// Serve Swagger UI at /api-docs endpoint
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
-
-// app.use(
-//   '/api-docs',
-//   express.static(path.join(__dirname, 'node_modules', 'swagger-ui-dist')),
-//   swaggerUi.serve,
-//   swaggerUi.setup(swaggerSpec)
-// );
 
 // todo: routes
 const productRoutes = require('./routes/product-routes');

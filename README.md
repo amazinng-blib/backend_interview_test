@@ -6,6 +6,8 @@ This API allows merchants to manage their product listings.
 
 ## BaseUrl = ['https://backend-interview-test.vercel.app/api/v1/product']
 
+## Documentation = ["https://backend-interview-test.vercel.app/api-docs/"]
+
 ### Display Products by Merchant ID
 
 Url: BaseUrl/:merchantId
