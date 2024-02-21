@@ -24,6 +24,12 @@ app.use(express.json());
 const swaggerJsdoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
 const swaggerOptions = require('./swagger/swagger-options');
+const path = require('path');
+
+app.use(
+  '/swagger-ui',
+  express.static(path.join(__dirname, 'node_modules', 'swagger-ui-dist'))
+);
 
 // Initialize swagger-jsdoc
 const swaggerSpec = swaggerJsdoc(swaggerOptions);
