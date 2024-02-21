@@ -31,7 +31,10 @@ const serverPort = 8080;
 // SwaggerRouter configuration
 const options = {
   routing: {
-    controllers: path.join(__dirname, '../first_interview_test/controller'),
+    controllers: path.join(
+      __dirname,
+      '../first_interview_test/controller/merchant-controller.js'
+    ),
   },
 };
 
