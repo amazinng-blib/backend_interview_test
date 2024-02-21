@@ -31,13 +31,13 @@ const serverPort = 8080;
 // SwaggerRouter configuration
 const options = {
   routing: {
-    controllers: controllers,
+    controllers: path.join(__dirname, '../first_interview_test/controller'),
   },
 };
 
 // Express app configuration
 const expressAppConfig = oas3Tools.expressAppConfig(
-  path.join(__dirname, 'docs/api/openapi.yaml'),
+  path.join(__dirname, '/docs/api/openapi.yaml'),
   options
 );
 
@@ -50,11 +50,11 @@ app.use(swaggerApp);
 // Start the server
 http.createServer(app).listen(serverPort, function () {
   console.log(
-    'Your server is listening on port %d (https://backend-interview-test.vercel.app)'
+    'Your server is listening on port %d (http://localhost:%d)',
+    serverPort,
+    serverPort
   );
-  console.log(
-    'Swagger-ui is available on https://backend-interview-test.vercel.app'
-  );
+  console.log('Swagger-ui is available on http://localhost:%d', serverPort);
 });
 
 // todo: routes
