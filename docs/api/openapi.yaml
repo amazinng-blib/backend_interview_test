@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: '3.0.3'
 info:
-  title: Interview Test - OpenAPI 3.0
+  title: 'Interview Test - OpenAPI 3.0'
   description: |-
     This is an API documentatio for Express JS CRUD Operation
 
