@@ -50,13 +50,10 @@ app.use(swaggerApp);
 // Start the server
 http.createServer(app).listen(serverPort, function () {
   console.log(
-    'Your server is listening on port %d (http://localhost:%d)',
-    serverPort,
-    serverPort
+    'Your server is listening on port %d (https://backend-interview-test.vercel.app/api/v1/product)'
   );
   console.log(
-    'Swagger-ui is available on http://localhost:%d/docs',
-    serverPort
+    'Swagger-ui is available on https://backend-interview-test.vercel.app/api/v1/product'
   );
 });
 
