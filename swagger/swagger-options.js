@@ -8,7 +8,7 @@ const swaggerOptions = {
     },
     servers: [
       {
-        url: 'https://backend-interview-test.vercel.app/api/v1/product',
+        url: 'https://backend-interview-test.vercel.app',
       },
     ],
     paths: {
