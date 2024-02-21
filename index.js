@@ -27,7 +27,7 @@ const swaggerOptions = require('./swagger/swagger-options');
 const path = require('path');
 
 app.use(
-  '/swagger-ui',
+  '/api-docs',
   express.static(path.join(__dirname, 'node_modules', 'swagger-ui-dist'))
 );
 
