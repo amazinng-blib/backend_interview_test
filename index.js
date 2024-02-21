@@ -27,20 +27,19 @@ const swaggerOptions = require('./swagger/swagger-options');
 const path = require('path');
 
 const swaggerSpec = swaggerJsdoc(swaggerOptions);
+app.use(
+  express.static(path.join(__dirname, 'node_modules', 'swagger-ui-dist'))
+);
+
+// Serve Swagger UI at /api-docs endpoint
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+
 // app.use(
 //   '/api-docs',
-//   express.static(path.join(__dirname, 'node_modules', 'swagger-ui-dist'))
+//   express.static(path.join(__dirname, 'node_modules', 'swagger-ui-dist')),
+//   swaggerUi.serve,
+//   swaggerUi.setup(swaggerSpec)
 // );
-
-// // Serve Swagger UI at /api-docs endpoint
-// app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
-
-app.use(
-  '/api-docs',
-  express.static(path.join(__dirname, 'node_modules', 'swagger-ui-dist')),
-  swaggerUi.serve,
-  swaggerUi.setup(swaggerSpec)
-);
 
 // todo: routes
 const productRoutes = require('./routes/product-routes');
