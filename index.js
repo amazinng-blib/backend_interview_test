@@ -42,7 +42,7 @@ var expressAppConfig = oas3Tools.expressAppConfig(
   options
 );
 var swaggerApp = expressAppConfig.getApp();
-app.use('/api/v1', swaggerApp);
+app.use(swaggerApp);
 
 // Initialize the Swagger middleware
 http.createServer(swaggerApp).listen(serverPort, function () {
