@@ -15,8 +15,8 @@ const swaggerOptions = {
       '/create-product': {
         post: {
           tags: ['Online Merchant Store'],
-          summary: 'Create product By merchant',
-          description: 'Merchant creates product using this route.',
+          summary: 'Create product Route',
+          description: 'Merchant creates products using this route.',
           operationId: 'createProductByMerchant',
           requestBody: {
             description: 'Created product by merchant',
@@ -35,7 +35,7 @@ const swaggerOptions = {
           },
           responses: {
             default: {
-              description: 'Successful operation',
+              description: 'Product Created Successfully',
               content: {
                 'application/json': {
                   schema: {
@@ -51,14 +51,14 @@ const swaggerOptions = {
       '/{productId}': {
         put: {
           tags: ['Online Merchant Store'],
-          summary: 'Update Merchant product',
-          description: 'Update merchant product.',
+          summary: 'Update product route',
+          description: 'This route is used for updating existing product.',
           operationId: 'updateMerchantProduct',
           parameters: [
             {
               name: 'productId',
               in: 'path',
-              description: 'Id of product to update',
+              description: 'Id of the product to be update',
               required: true,
               schema: {
                 type: 'string',
@@ -102,8 +102,8 @@ const swaggerOptions = {
         },
         delete: {
           tags: ['Online Merchant Store'],
-          summary: 'Delete Merchant products',
-          description: 'Delete merchant product using product id',
+          summary: 'Delete  product Route',
+          description: 'This route deletes product using the product ID',
           operationId: 'deleteProductById',
           parameters: [
             {
@@ -140,14 +140,16 @@ const swaggerOptions = {
       '/{merchantId}': {
         get: {
           tags: ['Online Merchant Store'],
-          summary: 'Filter Merchant products',
-          description: 'Returns all the products uploaded by a merchant',
+          summary: 'Filter all Merchant products',
+          description:
+            'This Route filters all merchant products using merchantID',
           operationId: 'filterProductByMerchantId',
           parameters: [
             {
               name: 'merchantId',
               in: 'path',
-              description: 'MerchantId of products to return',
+              description:
+                'Id of merchant whose products are to be filtered or returned',
               required: true,
               schema: {
                 type: 'integer',

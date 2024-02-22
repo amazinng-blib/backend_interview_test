@@ -88,4 +88,4 @@ The data structure used to hold product records is an array named `products`, wh
 
 ## ERD -- ENTITY RELATIONSHIP DAIGRAM
 
-### URL : [ERD diagram link](https://lucid.app/lucidchart/92f054dc-3ba5-4bc0-8401-2a87a8d2ad61/edit?viewport_loc=-1189%2C8%2C1683%2C898%2C0_0&invitationId=inv_e5b0063c-45bb-4bde-8dd4-b07e2c1b1a82)
+### ERD DIAGRAM LINK : [VIEW DIAGRAM](https://lucid.app/lucidchart/92f054dc-3ba5-4bc0-8401-2a87a8d2ad61/edit?viewport_loc=-1189%2C8%2C1683%2C898%2C0_0&invitationId=inv_e5b0063c-45bb-4bde-8dd4-b07e2c1b1a82)
